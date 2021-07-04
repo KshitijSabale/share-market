@@ -32,7 +32,7 @@ def telegram_messenger(ind, curPrice, title):
     message = f'  {colrow[0][ind]} \n Price :- {curPrice} \n Time:- {datetime.now().hour}:{datetime.now().minute} \n Date:- {datetime.now().day}/{datetime.now().month}/{datetime.now().year}'
     notification.notify(title=title, message=message,
                         app_icon=None, timeout=10, toast=False)
-    mess_url = f'https://api.telegram.org/bot1820921948:AAGMEJNq1DQH9j6s9KGZJJ8JYhPxJuMFBP0/sendMessage?chat_id=-550024746&text={title + message}'
+    mess_url = f'https://api.telegram.org/{token}/sendMessage?chat_id={chat_id}&text={title + message}'
     requests.get(mess_url)
 
 def comp(x, y):
